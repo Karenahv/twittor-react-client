@@ -20,7 +20,7 @@ code {
 }
 
 .btn.btn.primary {
-  background-color: $primary;
+  background-color: #1da0f2;
   border-color: #1da0f2;
   &:hover {
     background-color: rgba(26, 145, 118, 1);
@@ -35,6 +35,4 @@ code {
   &:focus {
     background-color: rgba(26, 161, 242, 0.1) !important;
   }
-}
-h1 {
 }
