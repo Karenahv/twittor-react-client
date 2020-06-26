@@ -9,6 +9,7 @@ import {
 import logoBlue from "../../assets/png/original.png";
 import logoWhite from "../../assets/png/original (1).png";
 import BasicModal from "../../components/Modal/BasicModal";
+import SignUpForm from "../../components/SignUpForm";
 import "./SignInSignUp.scss";
 
 export default function SignInSignUp() {
@@ -66,7 +67,9 @@ function RightComponent(props) {
         <h3>Únete a twittor hoy mismo</h3>
         <Button
           variant="primary"
-          onClick={() => openModal(<h2>Formulario de Registro</h2>)}
+          onClick={() =>
+            openModal(<SignUpForm setShowModal={setShowModal}></SignUpForm>)
+          }
         >
           Regístrate
         </Button>
