@@ -10,9 +10,11 @@ import logoBlue from "../../assets/png/original.png";
 import logoWhite from "../../assets/png/original (1).png";
 import BasicModal from "../../components/Modal/BasicModal";
 import SignUpForm from "../../components/SignUpForm";
+import SignInForm from "../../components/SignInForm";
 import "./SignInSignUp.scss";
 
-export default function SignInSignUp() {
+export default function SignInSignUp(props) {
+  const {setRefresh} = props
   const [showModal, setShowModal] = useState(false);
   const [contentModal, setContentModal] = useState(null);
 
@@ -25,7 +27,10 @@ export default function SignInSignUp() {
       <Container className="signin_signup" fluid>
         <Row>
           <LeftComponent />
-          <RightComponent openModal={openModal} setShowModal={setShowModal} />
+          <RightComponent
+              setRefresh={setRefresh}
+              openModal={openModal}
+              setShowModal={setShowModal} />
         </Row>
       </Container>
       <BasicModal show={showModal} setShow={setShowModal}>
@@ -58,7 +63,7 @@ function LeftComponent() {
 }
 
 function RightComponent(props) {
-  const { openModal, setShowModal } = props;
+  const { openModal, setShowModal, setRefresh } = props;
   return (
     <Col className="signin_signup__right" xs={6}>
       <div>
@@ -75,7 +80,7 @@ function RightComponent(props) {
         </Button>
         <Button
           variant="outline-primary"
-          onClick={() => openModal(<h2>Formulario de login</h2>)}
+          onClick={() => openModal(<SignInForm setRefresh={setRefresh} setShowModal={setShowModal}></SignInForm>)}
         >
           Iniciar Sesión
         </Button>

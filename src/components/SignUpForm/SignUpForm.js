@@ -7,7 +7,7 @@ import { signUpApi } from "../../api/auth";
 import "./SignUpForm.scss";
 
 export default function SignUpForm(props) {
-  const { setShowModal } = props;
+  const { setShowModal} = props;
   const [formData, setFormData] = useState(initialFormValue());
   const [signUpLoading, setSignUpLoading] = useState(false);
 
