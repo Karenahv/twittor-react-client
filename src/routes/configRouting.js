@@ -1,15 +1,21 @@
 import Home from "../page/Home";
 import Error404 from "../page/Error 404";
+import User from "../page/User";
 
 export default [
-  {
-    path: "/",
-    exact: true,
-    page: Home,
-  },
-  {
-    path: "*",
+    {
+        path: "/:id",
+        exact: true,
+        page: User,
+    },
+    {
+        path: "/",
+        exact: true,
+        page: Home,
+    },
+    {
+        path: "*",
 
-    page: Error404,
-  },
+        page: Error404,
+    },
 ];

@@ -77,7 +77,6 @@ export function logoutApi() {
 }
 
 export function isUserLogedApi() {
-  debugger;
   const token = getTokenApi();
   if (!token) {
     logoutApi();

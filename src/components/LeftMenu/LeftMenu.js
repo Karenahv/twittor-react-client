@@ -11,10 +11,17 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 import {Link} from "react-router-dom"
 import LogoWhite from '../../assets/png/original (1).png'
+import {logoutApi} from "../../api/auth";
+import useAuth from "../../hooks/useAuth";
 
 
 export default function LeftMenu(props) {
-    const {className, children} = props;
+    const {className, setRefresh, children} = props;
+    const user = useAuth();
+    const logout = () => {
+        logoutApi();
+        setRefresh(true);
+    }
   return (
   <div className="left-menu">
       <img className="logo" src={LogoWhite} alt="Twittor"/>
@@ -25,10 +32,10 @@ export default function LeftMenu(props) {
       <Link to="/users">
           <FontAwesomeIcon icon={faUsers}/> Usuarios
       </Link>
-      <Link to="/profile">
+      <Link to={`/${user?._id }`}>
           <FontAwesomeIcon icon={faUser}/> Perfil
       </Link>
-      <Link to="/logout">
+      <Link to="" onClick={logout}>
           <FontAwesomeIcon icon={faPowerOff}/> Salir
       </Link>
 
