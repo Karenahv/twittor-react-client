@@ -1,1 +1,19 @@
 @import "./colors";
+
+.react-datepicker-wrapper {
+  width: 100%;
+  height: 39px;
+  .react-datepicker__input-container {
+    height: 100%;
+    input {
+      background-color: $background-dark-light;
+      border-radius: 0;
+      border: 0;
+      border-bottom: 1px solid $border-grey;
+      color: $font-light !important;
+      width: 100%;
+      height: 100%;
+      padding: 0 12px;
+    }
+  }
+}
